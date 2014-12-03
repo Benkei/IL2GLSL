@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12A37571-832E-4278-86EA-115087388756}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IL2GLSL</RootNamespace>
+    <AssemblyName>IL2GLSL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.Decompiler">
+      <HintPath>..\lib\ICSharpCode.Decompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>..\packages\ICSharpCode.NRefactory.5.5.0\lib\Net40\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.Cecil">
+      <HintPath>..\packages\ICSharpCode.NRefactory.5.5.0\lib\Net40\ICSharpCode.NRefactory.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.CSharp">
+      <HintPath>..\packages\ICSharpCode.NRefactory.5.5.0\lib\Net40\ICSharpCode.NRefactory.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory.Xml">
+      <HintPath>..\packages\ICSharpCode.NRefactory.5.5.0\lib\Net40\ICSharpCode.NRefactory.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\packages\Mono.Cecil.0.9.5.4\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\FragmentOutAttribute.cs" />
+    <Compile Include="Annotations\FragmentShaderAttribute.cs" />
+    <Compile Include="Annotations\IShaderAttribute.cs" />
+    <Compile Include="Annotations\ShaderVariableAttribute.cs" />
+    <Compile Include="Annotations\UndefinedBehaviorAttribute.cs" />
+    <Compile Include="Annotations\UniformAttribute.cs" />
+    <Compile Include="Annotations\VaryingAttribute.cs" />
+    <Compile Include="Annotations\VertexInAttribute.cs" />
+    <Compile Include="Annotations\VertexShaderAttribute.cs" />
+    <Compile Include="Annotations\WarningAttribute.cs" />
+    <Compile Include="Bindings\Binding.cs" />
+    <Compile Include="Bindings\IProgram.cs" />
+    <Compile Include="Bindings\ISLSharpBinding.cs" />
+    <Compile Include="Descriptions\FunctionDescription.cs" />
+    <Compile Include="Descriptions\SourceDescription.cs" />
+    <Compile Include="Descriptions\VariableDescription.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\ReflectionMarkerAttribute.cs" />
+    <Compile Include="Reflection\ReflectionToken.cs" />
+    <Compile Include="Runtime\ResourceManager.cs" />
+    <Compile Include="Shaders\AttributeHelper.cs" />
+    <Compile Include="Shaders\Shader.Context.cs" />
+    <Compile Include="Shaders\Shader.cs" />
+    <Compile Include="Shaders\ShaderDefinition.BooleanVector.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Cecil.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Common.cs" />
+    <Compile Include="Shaders\ShaderDefinition.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Derivative.cs" />
+    <Compile Include="Shaders\ShaderDefinition.DoubleMatrix.cs" />
+    <Compile Include="Shaders\ShaderDefinition.DoubleVector.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Exponential.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Geometric.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Int32Vector.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Integer.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Interpolation.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Matrix.cs" />
+    <Compile Include="Shaders\ShaderDefinition.MatrixFunctions.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Noise.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Packing.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Sampler.cs" />
+    <Compile Include="Shaders\ShaderDefinition.SingleVector.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Special.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Texture.cs" />
+    <Compile Include="Shaders\ShaderDefinition.Trigonometry.cs" />
+    <Compile Include="Shaders\ShaderDefinition.UInt32Vector.cs" />
+    <Compile Include="ShaderType.cs" />
+    <Compile Include="SLSharpException.cs" />
+    <Compile Include="Translation\GLSL\GlslSourceBuilder.cs" />
+    <Compile Include="Translation\GLSL\GlslTransform.cs" />
+    <Compile Include="Translation\GLSL\GlslVisitor.cs" />
+    <Compile Include="Translation\GLSL\GlslVisitor.ShaderDef.cs" />
+    <Compile Include="Translation\GLSL\GlslVisitor.Unimplemented.cs" />
+    <Compile Include="Translation\GLSL\Workarounds\Exponential.cs" />
+    <Compile Include="Translation\GLSL\Workarounds\Trigonometric.cs" />
+    <Compile Include="Translation\ITransform.cs" />
+    <Compile Include="Translation\RenameLocals.cs" />
+    <Compile Include="Translation\Utility.cs" />
+    <Compile Include="Translation\VisitorBase.Abstract.cs" />
+    <Compile Include="Translation\VisitorBase.cs" />
+    <Compile Include="Translation\VisitorBase.Illegal.cs" />
+    <Compile Include="Translation\VisitorBase.ShaderDef.cs" />
+    <Compile Include="Translation\VisitorBase.Unsupported.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
